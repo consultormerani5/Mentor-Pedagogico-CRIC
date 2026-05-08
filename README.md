@@ -51,7 +51,7 @@ Diseñadas específicamente para la habilidad CRIC seleccionada:
 **🔗 CONCORDAR** - Asociar y relacionar
 - Mapas mentales, analogías, redes conceptuales, juegos de parejas
 
-**⭐ RELEVAR** - Destacar lo importante
+**⭐ RELIEVAR** - Destacar lo importante
 - Subrayado estratégico, resúmenes, esquemas, pirámides de información
 
 **🔍 INFERIR** - Deducir e interpretar
@@ -80,7 +80,7 @@ Lista completa de materiales y herramientas adaptados a la actividad
 - Crea redes de significados
 - Relaciona con conocimientos previos
 
-### ⭐ RELEVAR
+### ⭐ RELIEVAR
 **Destacar, identificar lo más importante**
 - Identifica ideas principales
 - Jerarquiza información
@@ -168,7 +168,7 @@ Cada planeación incluye:
 1. **Identificación**: Asignatura, tema, nivel, habilidad CRIC
 2. **Marco curricular**: DBA, estándares, lineamientos, competencias
 3. **Hexágono pedagógico**: 6 componentes estructurados
-4. **Secuencia didáctica**: 3 fases temporalizadas
+4. **Secuencia didáctica**: 8 fases temporalizadas (Motivación, Encuadre, Enunciación, Modelación, Simulación, Ejercitación, Demortración, Síntesis y Conclusión)
 5. **Actividades lúdicas**: 3 propuestas específicas para la habilidad
 6. **Evaluación**: 5 estrategias de valoración
 7. **Recursos**: Lista completa de materiales
