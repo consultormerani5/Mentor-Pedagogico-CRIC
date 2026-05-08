@@ -5,7 +5,7 @@
 Mentor Pedagógico CRIC es una **plataforma web inteligente** que genera automáticamente planes de clase innovadores combinando:
 
 - ✨ **Pedagogía Conceptual** (Hexágono Pedagógico)
-- 🎯 **Habilidades de Pensamiento CRIC** (Concordar, Relevar, Inferir, Construir)
+- 🎯 **Habilidades de Pensamiento CRIC** (Concordar, Relievar, Inferir, Construir)
 - 📚 **Marco Curricular Colombiano** (DBA, Estándares, Lineamientos, Competencias)
 - 🎮 **Actividades Lúdico-Didácticas** estructuradas
 
@@ -31,16 +31,16 @@ Mentor Pedagógico CRIC es una **plataforma web inteligente** que genera automá
 #### 🔷 Hexágono Pedagógico
 Estructura con 6 componentes fundamentales:
 
-1. **PROPÓSITOS** - Objetivos claros del aprendizaje
-2. **DIAGNÓSTICO** - Valoración de saberes previos
-3. **CONTENIDOS** - Conceptos, procedimientos y actitudes
-4. **MÉTODOS** - Estrategias lúdicas adaptadas
-5. **RECURSOS** - Materiales y espacios necesarios
-6. **EVALUACIÓN** - Proceso continuo de valoración
+1. **PROPÓSITOS** - Desempeños que debe alcanzar los estudiantes
+2. **EVALUACIÓN** - Evidencia que muestra el nivel del desempeño alcanzado por el estudiante
+3. **ENSEÑANZAS** - Conceptos, procedimientos y actitudes para cualificar el desempeño
+4. **DIDÁCTICA** - Estrategias lúdicas adaptadas
+5. **SECUENCIA DIDÁCTICA** - Etapas y fases para desarrollar la enseñanza
+6. **RECURSOS** - Materiales y espacios necesarios
 
 #### 📍 Secuencia Didáctica Estructurada
 
-**INICIO (15%)** → **DESARROLLO (50%)** → **CIERRE (25%)**
+**INICIO: Motivación, Encuadre (10%)** → **DESARROLLO DE LA COMPRENSIÓN: Enunciación, Modelación (40%)** → **DESARROLLO DE LA DESTREZA: Simulación, Ejercitación, Demostración (40%)** → **CIERRE: Síntesis y Conclusiones (10%)**
 
 Cada fase con duración calculada automáticamente según el tiempo total de clase.
 
