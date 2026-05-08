@@ -15,7 +15,7 @@ Mentor Pedagógico CRIC es una **plataforma web inteligente** que genera automá
 
 ### 1️⃣ **Ingresa tus datos:**
 - Asignatura
-- Nivel educativo
+- Grado
 - Tema a enseñar
 - Habilidad de pensamiento CRIC
 - Duración de la clase
@@ -31,9 +31,9 @@ Mentor Pedagógico CRIC es una **plataforma web inteligente** que genera automá
 #### 🔷 Hexágono Pedagógico
 Estructura con 6 componentes fundamentales:
 
-1. **PROPÓSITOS** - Desempeños que debe alcanzar los estudiantes
+1. **PROPÓSITOS** - Desempeños que deben alcanzar los estudiantes
 2. **EVALUACIÓN** - Evidencia que muestra el nivel del desempeño alcanzado por el estudiante
-3. **ENSEÑANZAS** - Conceptos, procedimientos y actitudes para cualificar el desempeño
+3. **ENSEÑANZAS** - Conceptos, procedimientos y actitudes
 4. **DIDÁCTICA** - Estrategias lúdicas adaptadas
 5. **SECUENCIA DIDÁCTICA** - Etapas y fases para desarrollar la enseñanza
 6. **RECURSOS** - Materiales y espacios necesarios
