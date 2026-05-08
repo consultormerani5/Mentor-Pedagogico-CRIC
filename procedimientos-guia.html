@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedimientos CRIC Estructurados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            background: #f8f9fa;
+        }
+        
+        .tab-button {
+            flex: 1;
+            padding: 20px;
+            border: none;
+            background: #f8f9fa;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-button:hover {
+            background: #e9ecef;
+        }
+        
+        .tab-button.active {
+            background: white;
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 40px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .procedure-title {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .definition {
+            background: #f0f4ff;
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .skill-icon {
+            font-size: 1.8em;
+        }
+        
+        .phases {
+            margin: 30px 0;
+        }
+        
+        .phase {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .phase:hover {
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        
+        .phase-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .phase-header h3 {
+            font-size: 1.2em;
+        }
+        
+        .phase-number {
+            background: rgba(255,255,255,0.3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .phase-content {
+            padding: 20px;
+            display: none;
+        }
+        
+        .phase.active .phase-content {
+            display: block;
+        }
+        
+        .phase-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .actions-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .actions-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .actions-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .product {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .product-title {
+            color: #856404;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .product-content {
+            color: #856404;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 2px solid #eee;
+        }
+        
+        .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .phase.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Procedimientos CRIC Estructurados</h1>
+            <p>Guías detalladas para desarrollar Habilidades de Pensamiento</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                Fundación Lectores y Competencias - Pedagogía Conceptual
+            </p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab(event, 'concordar')">🔗 CONCORDAR</button>
+            <button class="tab-button" onclick="showTab(event, 'relevar')">⭐ RELEVAR</button>
+            <button class="tab-button" onclick="showTab(event, 'inferir')">🔍 INFERIR</button>
+            <button class="tab-button" onclick="showTab(event, 'construir')">🏗️ CONSTRUIR</button>
+        </div>
+        
+        <!-- ========== CONCORDAR ========== -->
+        <div id="concordar" class="tab-content active">
+            <h2 class="procedure-title">🔗 PROCEDIMIENTO PARA CONCORDAR</h2>
+            
+            <div class="definition">
+                Proceso mental de selección de posibilidades y toma de decisiones mediante clasificación, caracterización, diferenciación, comparación y relación de elementos según una necesidad en contexto determinado.
+            </div>
+            
+            <h3 class="section-title">Destrezas que Desarrolla</h3>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span class="skill-icon">📋</span>
+                    <span>Clasificar</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🏷️</span>
+                    <span>Caracterizar</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🔄</span>
+                    <span>Diferenciar</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">⚖️</span>
+                    <span>Comparar</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🔗</span>
+                    <span>Relacionar Elementos</span>
+                </div>
+            </div>
+            
+            <h3 class="section-title">Fases del Procedimiento</h3>
+            <div class="phases">
+                <div class="phase active">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">1</div>
+                            <h3>Textos Válidos y Confiables</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Verificar que los textos sean válidos y confiables con propósito de lectura claro</p>
+                        <ul class="actions-list">
+                            <li>Identificar textos confiables según criterios de validez</li>
+                            <li>Establecer el propósito de lectura</li>
+                            <li>Validar fuentes de información</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">2</div>
+                            <h3>Verificación de Confiabilidad</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Verificar que los textos sean confiables</p>
+                        <ul class="actions-list">
+                            <li>Validar fuentes de información</li>
+                            <li>Confirmar autoría del texto</li>
+                            <li>Verificar fecha de publicación</li>
+                            <li>Evaluar credibilidad del autor</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">3</div>
+                            <h3>Selección Temática</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Seleccionar textos que cumplan la Concordancia Temática</p>
+                        <ul class="actions-list">
+                            <li>Leer títulos e índices de los textos</li>
+                            <li>Verificar si la mayoría de los textos concuerdan con el tema del propósito</li>
+                            <li>Descartar textos que no concuerden si la respuesta es NO</li>
+                            <li>Alineación temática con el propósito educativo</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">4</div>
+                            <h3>Concordancia de Superestructura</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Elegir textos que cumplan la Concordancia de Superestructura</p>
+                        <ul class="actions-list">
+                            <li>Identificar qué tipo son la mayoría de ideas del texto (Conceptual, Argumentativo o Procedimental)</li>
+                            <li>Verificar que la estructura del texto sea compatible con la necesidad</li>
+                            <li>Descartar el texto y revisar otro si la respuesta es NO</li>
+                            <li>Análisis de estructura textual y formato</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">5</div>
+                            <h3>Concordancia de Propósito</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Elegir textos que cumplan la Concordancia de Propósito</p>
+                        <ul class="actions-list">
+                            <li>Identificar el propósito central del autor (Introducción, prólogo o presentación)</li>
+                            <li>Verificar si el propósito del autor es similar al suyo</li>
+                            <li>Descartar el texto si los propósitos no concuerdan</li>
+                            <li>Alineación de intenciones comunicativas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-title">📌 PRODUCTO FINAL</div>
+                <div class="product-content">
+                    Textos que responden al Propósito de Lectura seleccionados según criterios de validez, confiabilidad, concordancia temática, superestructural y propositiva.
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========== RELEVAR ========== -->
+        <div id="relevar" class="tab-content">
+            <h2 class="procedure-title">⭐ PROCEDIMIENTO PARA RELEVAR</h2>
+            
+            <div class="definition">
+                Proceso mental de identificación y destaque de elementos principales que responden al propósito de lectura, mediante subrayado, esquematización y organización jerárquica de información.
+            </div>
+            
+            <h3 class="section-title">Destrezas que Desarrolla</h3>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span class="skill-icon">🎯</span>
+                    <span>Identificar Relevancia</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">⭐</span>
+                    <span>Destacar Ideas Principales</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🔨</span>
+                    <span>Reconocer Estructuras</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">✂️</span>
+                    <span>Sintetizar Información</span>
+                </div>
+            </div>
+            
+            <h3 class="section-title">Fases del Procedimiento</h3>
+            <div class="phases">
+                <div class="phase active">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">1</div>
+                            <h3>Contraste de Preguntas y Párrafos</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Contrastar las Preguntas de Lectura con los párrafos</p>
+                        <ul class="actions-list">
+                            <li>Identificar los párrafos que tienen información relevante</li>
+                            <li>Leer el párrafo completo y detenidamente</li>
+                            <li>Identificar la sección del párrafo que responde la pregunta</li>
+                            <li>Subrayar la oración que responde la Pregunta de Lectura</li>
+                            <li>Marcar la oración con el número de Pregunta correspondiente</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">2</div>
+                            <h3>Subrayado de Oraciones</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Subrayar las oraciones que pueden responder la pregunta</p>
+                        <ul class="actions-list">
+                            <li>Marcar con exactitud la oración correcta</li>
+                            <li>Verificar que la oración contenga una idea completa</li>
+                            <li>Verificar que hay oraciones para cada pregunta de lectura</li>
+                            <li>Uso estratégico de herramientas de marcación (colores, símbolos)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">3</div>
+                            <h3>Organización de Oraciones</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Organizar las oraciones a partir de las Preguntas de Lectura</p>
+                        <ul class="actions-list">
+                            <li>Verificar que tiene oraciones para cada pregunta de lectura</li>
+                            <li>Organizar las oraciones de la más a la menos completa</li>
+                            <li>Asegurar correspondencia entre pregunta y respuesta</li>
+                            <li>Jerarquización según importancia y completitud</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-title">📌 PRODUCTO FINAL</div>
+                <div class="product-content">
+                    Oraciones relevadas y organizadas según las Preguntas de Lectura, que destacan los elementos principales del texto de forma clara y estructurada.
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========== INFERIR ========== -->
+        <div id="inferir" class="tab-content">
+            <h2 class="procedure-title">🔍 PROCEDIMIENTO PARA INFERIR</h2>
+            
+            <div class="definition">
+                Proceso mental de deducción que permite llegar a conclusiones sobre lo implícito del texto, mediante simplificación, nuclearización y cromatización de proposiciones.
+            </div>
+            
+            <h3 class="section-title">Destrezas que Desarrolla</h3>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span class="skill-icon">🔍</span>
+                    <span>Deducir Significados</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">💭</span>
+                    <span>Interpretar Implícitos</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">⚙️</span>
+                    <span>Analizar Lógica</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🎓</span>
+                    <span>Comprender Profundamente</span>
+                </div>
+            </div>
+            
+            <h3 class="section-title">Fases del Procedimiento</h3>
+            <div class="phases">
+                <div class="phase active">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">1</div>
+                            <h3>Simplificación de Oraciones</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Simplificar las oraciones relevadas para la pregunta</p>
+                        <ul class="actions-list">
+                            <li>Leer las oraciones relevadas para la pregunta</li>
+                            <li>Eliminar información no relevante en cada oración</li>
+                            <li>Mantener la idea central de cada oración</li>
+                            <li>Reducir complejidad sin perder significado</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">2</div>
+                            <h3>Nuclearización de Oraciones</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Nuclearizar las oraciones para identificar sus componentes clave</p>
+                        <ul class="actions-list">
+                            <li>Identificar el verbo principal de cada oración</li>
+                            <li>Seleccionar las Nociones 1 y 2 en cada oración</li>
+                            <li>Escribir las proposiciones en orden canónico (N1-R-N2)</li>
+                            <li>Identificar los especificadores de las nociones</li>
+                            <li>Verificar que las proposiciones mantengan la idea original</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">3</div>
+                            <h3>Cromatización de Proposiciones</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Cromatizar las proposiciones para identificar relaciones</p>
+                        <ul class="actions-list">
+                            <li>Identificar la información que complementa las Nociones</li>
+                            <li>Reconocer la relación y el núcleo de cada proposición</li>
+                            <li>Redactar cada proposición con complementos encontrados</li>
+                            <li>Enriquecer con matices semánticos y contextuales</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">4</div>
+                            <h3>Verificación de Proposiciones</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Verificar que las proposiciones sean claras y responder las preguntas</p>
+                        <ul class="actions-list">
+                            <li>Confirmar que las proposiciones son claras</li>
+                            <li>Verificar que responden a las preguntas de lectura</li>
+                            <li>Asegurar coherencia lógica</li>
+                            <li>Validar completitud de la respuesta</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-title">📌 PRODUCTO FINAL</div>
+                <div class="product-content">
+                    Proposiciones Inferidas que representan el significado profundo del texto, capturando tanto lo explícito como lo implícito de manera estructurada y lógica.
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========== CONSTRUIR ========== -->
+        <div id="construir" class="tab-content">
+            <h2 class="procedure-title">🏗️ PROCEDIMIENTO PARA CONSTRUIR MACROPROPOSICIONES</h2>
+            
+            <div class="definition">
+                Proceso mental de creación de nuevas proposiciones que integran y sintetizan información de múltiples fuentes, mediante jerarquización, supresión, generalización y construcción innovadora.
+            </div>
+            
+            <h3 class="section-title">Destrezas que Desarrolla</h3>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span class="skill-icon">🎨</span>
+                    <span>Crear y Diseñar</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🧩</span>
+                    <span>Sintetizar Información</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">💡</span>
+                    <span>Innovar Ideas</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🌐</span>
+                    <span>Integrar Perspectivas</span>
+                </div>
+            </div>
+            
+            <h3 class="section-title">Fases del Procedimiento</h3>
+            <div class="phases">
+                <div class="phase active">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">1</div>
+                            <h3>Jerarquización de Proposiciones</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Jerarquizar Proposiciones por su importancia</p>
+                        <ul class="actions-list">
+                            <li>Organizar las Proposiciones inferidas de la más a la menos completa</li>
+                            <li>Establecer criterios de importancia</li>
+                            <li>Asignar pesos relativos a cada proposición</li>
+                            <li>Ordenar según respuesta a cada Pregunta de Lectura</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">2</div>
+                            <h3>Supresión de Proposiciones</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Suprimir Proposiciones redundantes o incompletas</p>
+                        <ul class="actions-list">
+                            <li>Verificar si hay 2 o más Proposiciones con la misma información</li>
+                            <li>Eliminar las Proposiciones menos completas</li>
+                            <li>Evitar redundancias innecesarias</li>
+                            <li>Mantener solo información única y valiosa</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">3</div>
+                            <h3>Generalización de Proposiciones</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Generalizar Proposiciones para crear categorías</p>
+                        <ul class="actions-list">
+                            <li>Leer detenidamente las Nociones de cada Proposición</li>
+                            <li>Verificar si se pueden unir las Nociones de varias Proposiciones</li>
+                            <li>Crear categorías o conceptos más amplios</li>
+                            <li>Si es posible, crear una nueva Proposición que une las Nociones</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">4</div>
+                            <h3>Construcción de Proposiciones</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Construir Proposiciones nuevas integrando información</p>
+                        <ul class="actions-list">
+                            <li>Verificar si puede integrar 2 o más Proposiciones para una más contundente</li>
+                            <li>Escribir una Proposición que no repita información</li>
+                            <li>Incluir aspectos relevantes de las seleccionadas</li>
+                            <li>Verificar que incluyó toda la información relevante</li>
+                            <li>Crear síntesis innovadoras y originales</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">5</div>
+                            <h3>Verificación Final</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Verificar coherencia y completitud</p>
+                        <ul class="actions-list">
+                            <li>Confirmar que se mantuvo el sentido de las Proposiciones iniciales</li>
+                            <li>Validar que la Macroproposición responde completamente a la pregunta</li>
+                            <li>Verificar coherencia interna y externa</li>
+                            <li>Asegurar originalidad e innovación del producto</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-title">📌 PRODUCTO FINAL</div>
+                <div class="product-content">
+                    Macroproposiciones: Proposiciones nuevas, integradas y sintetizadas que representan el conocimiento completo, coherente y original construido a partir de múltiples fuentes y perspectivas.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Mentor Pedagógico CRIC</strong></p>
+            <p>Procedimientos basados en Pedagogía Conceptual - Fundación Lectores y Competencias</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">© 2026 - Experto en Planeación Lúdico-Didáctica</p>
+        </div>
+    </div>
+    
+    <script>
+        function showTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            
+            // Hide all tab contents
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Remove active class from all buttons
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            
+            // Show the current tab and mark the button as active
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        function togglePhase(element) {
+            element.parentElement.classList.toggle("active");
+        }
+        
+        // Initialize first phase as open
+        document.addEventListener('DOMContentLoaded', function() {
+            var phases = document.querySelectorAll('.phase');
+            if (phases.length > 0) {
+                phases[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
