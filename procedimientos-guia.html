@@ -48,6 +48,7 @@
             display: flex;
             border-bottom: 2px solid #eee;
             background: #f8f9fa;
+            flex-wrap: wrap;
         }
         
         .tab-button {
@@ -60,6 +61,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             border-bottom: 3px solid transparent;
+            min-width: 150px;
         }
         
         .tab-button:hover {
@@ -249,6 +251,22 @@
             margin-bottom: 10px;
         }
         
+        .highlight-box {
+            background: #fce4ec;
+            border-left: 5px solid #c2185b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .highlight-title {
+            font-weight: bold;
+            color: #c2185b;
+            margin-bottom: 10px;
+        }
+        
         .footer {
             background: #f8f9fa;
             padding: 30px;
@@ -288,7 +306,7 @@
             <h2 class="procedure-title">🔗 PROCEDIMIENTO PARA CONCORDAR</h2>
             
             <div class="definition">
-                Proceso mental de selección de posibilidades y toma de decisiones mediante clasificación, caracterización, diferenciación, comparación y relación de elementos según una necesidad en contexto determinado.
+                Proceso mental de selección de posibilidades y toma de decisiones mediante clasificación, caracterización, diferenciación, comparación y relación de elementos según una necesidad específica.
             </div>
             
             <h3 class="section-title">Destrezas que Desarrolla</h3>
@@ -454,7 +472,7 @@
             
             <div class="example-box">
                 <div class="example-title">💡 Ejemplo Contextual: Organización del Tiempo</div>
-                <p>La habilidad RELEVAR interviene cuando una persona prioriza actividades según una necesidad. Por ejemplo: Si tiene 5 tareas y solo 2 horas, debe RELEVAR (seleccionar y priorizar) cuáles son las más importantes según parámetros clave como urgencia, impacto y recursos disponibles. Esto facilita la toma de decisiones efectiva y la organización óptima del tiempo.</p>
+                <p>La habilidad RELEVAR interviene cuando una persona prioriza actividades según una necesidad. Por ejemplo: Si tiene 5 tareas y solo 2 horas, debe RELEVAR (seleccionar y priorizar) cuáles son las más importantes según parámetros clave como urgencia, impacto y recursos disponibles.</p>
             </div>
             
             <h3 class="section-title">Fases del Procedimiento</h3>
@@ -508,17 +526,16 @@
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Organizar los elementos de forma jerárquica según su importancia y urgencia</p>
+                        <p class="phase-description">Organizar elementos de mayor a menor importancia según criterios establecidos</p>
                         <ul class="actions-list">
-                            <li>Ordenar elementos de mayor a menor relevancia respecto a la necesidad</li>
-                            <li>Establecer niveles de prioridad (crítico, importante, secundario)</li>
-                            <li>Crear una estructura jerárquica que facilite la comprensión</li>
-                            <li>Agrupar elementos relacionados por categorías</li>
-                            <li>Asignar recursos o tiempos según prioridad</li>
+                            <li>Identificar elementos críticos versus importantes versus secundarios</li>
+                            <li>Ordenar por urgencia, impacto y disponibilidad de recursos</li>
+                            <li>Asignar niveles de prioridad según necesidad</li>
+                            <li>Crear secuencia lógica de ejecución o presentación</li>
                         </ul>
                     </div>
                 </div>
-
+                
                 <div class="phase">
                     <div class="phase-header" onclick="togglePhase(this)">
                         <div>
@@ -528,17 +545,16 @@
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Organizar la información y procesos en orden presentable y ejecutable</p>
+                        <p class="phase-description">Estructurar información de forma presentable y accesible</p>
                         <ul class="actions-list">
-                            <li>Estructurar la información en secuencia lógica</li>
-                            <li>Crear un plan o ruta de acción basada en las prioridades</li>
-                            <li>Definir el orden de ejecución de procesos o actividades</li>
-                            <li>Preparar la información para presentar de forma clara y coherente</li>
-                            <li>Verificar que cada paso responde a la necesidad original</li>
+                            <li>Presentar en orden lógico según prioridades establecidas</li>
+                            <li>Usar formatos claros y comprensibles</li>
+                            <li>Facilitar visualización rápida de información</li>
+                            <li>Asegurar que nada importante se pierde en el proceso</li>
                         </ul>
                     </div>
                 </div>
-
+                
                 <div class="phase">
                     <div class="phase-header" onclick="togglePhase(this)">
                         <div>
@@ -548,13 +564,12 @@
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Confirmar que la selección resuelve el problema y la organización es óptima</p>
+                        <p class="phase-description">Validar que la priorización resuelve la situación problema</p>
                         <ul class="actions-list">
-                            <li>Validar que todos los parámetros clave están cubiertos</li>
-                            <li>Verificar que el orden propuesto es el más eficiente</li>
-                            <li>Confirmar que nada relevante fue eliminado</li>
-                            <li>Asegurar que la presentación es clara y comprensible</li>
-                            <li>Evaluar si la solución resuelve efectivamente la situación problema</li>
+                            <li>Confirmar que los elementos relevados responden a la necesidad</li>
+                            <li>Verificar que la organización es clara y efectiva</li>
+                            <li>Evaluar si la priorización optimiza tiempo y recursos</li>
+                            <li>Ajustar si es necesario para máxima efectividad</li>
                         </ul>
                     </div>
                 </div>
@@ -573,142 +588,30 @@
             <h2 class="procedure-title">🔍 PROCEDIMIENTO PARA INFERIR</h2>
             
             <div class="definition">
-                Proceso mental de deducción que permite llegar a conclusiones sobre lo implícito del texto, mediante simplificación, nuclearización y cromatización de proposiciones.
+                Proceso mental de análisis que permite extraer significados no explícitos del texto mediante la relación de información, contextos y evidencias. Habilidad que desarrolla la capacidad de deducción lógica y pensamiento analítico profundo.
             </div>
             
             <h3 class="section-title">Destrezas que Desarrolla</h3>
             <div class="skills-list">
                 <div class="skill-item">
-                    <span class="skill-icon">🔍</span>
+                    <span class="skill-icon">🔎</span>
+                    <span>Analizar Información</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🧠</span>
                     <span>Deducir Significados</span>
                 </div>
                 <div class="skill-item">
-                    <span class="skill-icon">💭</span>
-                    <span>Interpretar Implícitos</span>
+                    <span class="skill-icon">🔗</span>
+                    <span>Relacionar Contextos</span>
                 </div>
                 <div class="skill-item">
-                    <span class="skill-icon">⚙️</span>
-                    <span>Analizar Lógica</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-icon">🎓</span>
-                    <span>Comprender Profundamente</span>
-                </div>
-            </div>
-            
-            <h3 class="section-title">Fases del Procedimiento</h3>
-            <div class="phases">
-                <div class="phase active">
-                    <div class="phase-header" onclick="togglePhase(this)">
-                        <div>
-                            <div class="phase-number">1</div>
-                            <h3>Simplificación de Oraciones</h3>
-                        </div>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="phase-content">
-                        <p class="phase-description">Simplificar las oraciones relevadas para la pregunta</p>
-                        <ul class="actions-list">
-                            <li>Leer las oraciones relevadas para la pregunta</li>
-                            <li>Eliminar información no relevante en cada oración</li>
-                            <li>Mantener la idea central de cada oración</li>
-                            <li>Reducir complejidad sin perder significado</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="phase">
-                    <div class="phase-header" onclick="togglePhase(this)">
-                        <div>
-                            <div class="phase-number">2</div>
-                            <h3>Nuclearización de Oraciones</h3>
-                        </div>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="phase-content">
-                        <p class="phase-description">Nuclearizar las oraciones para identificar sus componentes clave</p>
-                        <ul class="actions-list">
-                            <li>Identificar el verbo principal de cada oración</li>
-                            <li>Seleccionar las Nociones 1 y 2 en cada oración</li>
-                            <li>Escribir las proposiciones en orden canónico (N1-R-N2)</li>
-                            <li>Identificar los especificadores de las nociones</li>
-                            <li>Verificar que las proposiciones mantengan la idea original</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="phase">
-                    <div class="phase-header" onclick="togglePhase(this)">
-                        <div>
-                            <div class="phase-number">3</div>
-                            <h3>Cromatización de Proposiciones</h3>
-                        </div>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="phase-content">
-                        <p class="phase-description">Cromatizar las proposiciones para identificar relaciones</p>
-                        <ul class="actions-list">
-                            <li>Identificar la información que complementa las Nociones</li>
-                            <li>Reconocer la relación y el núcleo de cada proposición</li>
-                            <li>Redactar cada proposición con complementos encontrados</li>
-                            <li>Enriquecer con matices semánticos y contextuales</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="phase">
-                    <div class="phase-header" onclick="togglePhase(this)">
-                        <div>
-                            <div class="phase-number">4</div>
-                            <h3>Verificación de Proposiciones</h3>
-                        </div>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="phase-content">
-                        <p class="phase-description">Verificar que las proposiciones sean claras y responder las preguntas</p>
-                        <ul class="actions-list">
-                            <li>Confirmar que las proposiciones son claras</li>
-                            <li>Verificar que responden a las preguntas de lectura</li>
-                            <li>Asegurar coherencia lógica</li>
-                            <li>Validar completitud de la respuesta</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product">
-                <div class="product-title">📌 PRODUCTO FINAL</div>
-                <div class="product-content">
-                    Proposiciones Inferidas que representan el significado profundo del texto, capturando tanto lo explícito como lo implícito de manera estructurada y lógica.
-                </div>
-            </div>
-        </div>
-        
-        <!-- ========== CONSTRUIR ========== -->
-        <div id="construir" class="tab-content">
-            <h2 class="procedure-title">🏗️ PROCEDIMIENTO PARA CONSTRUIR MACROPROPOSICIONES</h2>
-            
-            <div class="definition">
-                Proceso mental de creación de nuevas proposiciones que integran y sintetizan información de múltiples fuentes, mediante jerarquización, supresión, generalización y construcción innovadora.
-            </div>
-            
-            <h3 class="section-title">Destrezas que Desarrolla</h3>
-            <div class="skills-list">
-                <div class="skill-item">
-                    <span class="skill-icon">🎨</span>
-                    <span>Crear y Diseñar</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-icon">🧩</span>
-                    <span>Sintetizar Información</span>
+                    <span class="skill-icon">📊</span>
+                    <span>Interpretar Datos</span>
                 </div>
                 <div class="skill-item">
                     <span class="skill-icon">💡</span>
-                    <span>Innovar Ideas</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-icon">🌐</span>
-                    <span>Integrar Perspectivas</span>
+                    <span>Generar Hipótesis</span>
                 </div>
             </div>
             
@@ -718,17 +621,17 @@
                     <div class="phase-header" onclick="togglePhase(this)">
                         <div>
                             <div class="phase-number">1</div>
-                            <h3>Jerarquización de Proposiciones</h3>
+                            <h3>Recopilación de Información Explícita</h3>
                         </div>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Jerarquizar Proposiciones por su importancia</p>
+                        <p class="phase-description">Identificar y compilar información directamente expresada en el texto</p>
                         <ul class="actions-list">
-                            <li>Organizar las Proposiciones inferidas de la más a la menos completa</li>
-                            <li>Establecer criterios de importancia</li>
-                            <li>Asignar pesos relativos a cada proposición</li>
-                            <li>Ordenar según respuesta a cada Pregunta de Lectura</li>
+                            <li>Extraer datos, hechos y proposiciones explícitas</li>
+                            <li>Identificar contexto y situación presentada</li>
+                            <li>Marcar información clave del texto</li>
+                            <li>Crear inventario de lo que está claramente expresado</li>
                         </ul>
                     </div>
                 </div>
@@ -737,17 +640,17 @@
                     <div class="phase-header" onclick="togglePhase(this)">
                         <div>
                             <div class="phase-number">2</div>
-                            <h3>Supresión de Proposiciones</h3>
+                            <h3>Análisis de Relaciones y Conexiones</h3>
                         </div>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Suprimir Proposiciones redundantes o incompletas</p>
+                        <p class="phase-description">Relacionar información explícita para identificar patrones</p>
                         <ul class="actions-list">
-                            <li>Verificar si hay 2 o más Proposiciones con la misma información</li>
-                            <li>Eliminar las Proposiciones menos completas</li>
-                            <li>Evitar redundancias innecesarias</li>
-                            <li>Mantener solo información única y valiosa</li>
+                            <li>Establecer conexiones entre ideas presentadas</li>
+                            <li>Identificar causas y efectos implícitos</li>
+                            <li>Reconocer patrones y estructuras ocultas</li>
+                            <li>Analizar relaciones entre elementos del texto</li>
                         </ul>
                     </div>
                 </div>
@@ -756,17 +659,17 @@
                     <div class="phase-header" onclick="togglePhase(this)">
                         <div>
                             <div class="phase-number">3</div>
-                            <h3>Generalización de Proposiciones</h3>
+                            <h3>Interpretación de Lo Implícito</h3>
                         </div>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Generalizar Proposiciones para crear categorías</p>
+                        <p class="phase-description">Deducir significados no directamente expresados</p>
                         <ul class="actions-list">
-                            <li>Leer detenidamente las Nociones de cada Proposición</li>
-                            <li>Verificar si se pueden unir las Nociones de varias Proposiciones</li>
-                            <li>Crear categorías o conceptos más amplios</li>
-                            <li>Si es posible, crear una nueva Proposición que une las Nociones</li>
+                            <li>Identificar lo que el autor sugiere pero no dice explícitamente</li>
+                            <li>Interpretar dobles sentidos e intenciones ocultas</li>
+                            <li>Deducir valores, actitudes y prejuicios del autor</li>
+                            <li>Reconocer presupuestos y supuestos no mencionados</li>
                         </ul>
                     </div>
                 </div>
@@ -775,18 +678,17 @@
                     <div class="phase-header" onclick="togglePhase(this)">
                         <div>
                             <div class="phase-number">4</div>
-                            <h3>Construcción de Proposiciones</h3>
+                            <h3>Formulación de Conclusiones Inferenciales</h3>
                         </div>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Construir Proposiciones nuevas integrando información</p>
+                        <p class="phase-description">Formular conclusiones basadas en análisis y deducción</p>
                         <ul class="actions-list">
-                            <li>Verificar si puede integrar 2 o más Proposiciones para una más contundente</li>
-                            <li>Escribir una Proposición que no repita información</li>
-                            <li>Incluir aspectos relevantes de las seleccionadas</li>
-                            <li>Verificar que incluyó toda la información relevante</li>
-                            <li>Crear síntesis innovadoras y originales</li>
+                            <li>Plantear inferencias lógicas fundamentadas</li>
+                            <li>Establecer conclusiones que van más allá del texto</li>
+                            <li>Generar hipótesis verificables</li>
+                            <li>Asegurar coherencia entre deducción y evidencia textual</li>
                         </ul>
                     </div>
                 </div>
@@ -795,17 +697,17 @@
                     <div class="phase-header" onclick="togglePhase(this)">
                         <div>
                             <div class="phase-number">5</div>
-                            <h3>Verificación Final</h3>
+                            <h3>Validación de Inferencias</h3>
                         </div>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Verificar coherencia y completitud</p>
+                        <p class="phase-description">Verificar que las inferencias son válidas y justificadas</p>
                         <ul class="actions-list">
-                            <li>Confirmar que se mantuvo el sentido de las Proposiciones iniciales</li>
-                            <li>Validar que la Macroproposición responde completamente a la pregunta</li>
-                            <li>Verificar coherencia interna y externa</li>
-                            <li>Asegurar originalidad e innovación del producto</li>
+                            <li>Confirmar que la inferencia está fundamentada en el texto</li>
+                            <li>Validar que la deducción sigue lógica coherente</li>
+                            <li>Verificar que no hay contradicciones con información explícita</li>
+                            <li>Documentar las evidencias que sustentan cada inferencia</li>
                         </ul>
                     </div>
                 </div>
@@ -814,50 +716,202 @@
             <div class="product">
                 <div class="product-title">📌 PRODUCTO FINAL</div>
                 <div class="product-content">
-                    Macroproposiciones: Proposiciones nuevas, integradas y sintetizadas que representan el conocimiento completo, coherente y original construido a partir de múltiples fuentes y perspectivas.
+                    Conclusiones Inferenciales Fundamentadas: Significados deducidos, interpretaciones profundas y conclusiones válidas extraídas del análisis de información explícita, patrones identificados y relaciones establecidas en el texto.
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========== CONSTRUIR ========== -->
+        <div id="construir" class="tab-content">
+            <h2 class="procedure-title">🏗️ PROCEDIMIENTO PARA CONSTRUIR</h2>
+            
+            <div class="definition">
+                Proceso mental que integra capacidades analíticas en la <strong>máxima expresión del pensamiento crítico</strong>. Luego de extraer proposiciones, el lector elimina información repetida, generaliza a categorías más amplias logrando mayor comprensión, y formula conclusiones generales y específicas de su proceso de lectura. Habilidad que propende por propuestas innovadoras, conclusiones sólidas y argumentación clara, permitiendo que el estudiante sea capaz de entender y explicar un concepto con todas sus partes y categorías, defender y contra-argumentar sus ideas con evidencias claras.
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">⭐ Expresión Máxima del Pensamiento Crítico</div>
+                <p>CONSTRUIR es donde el estudiante demuestra la capacidad de <strong>síntesis, metacognición y argumentación profunda</strong>. No solo reproduce información, sino que la transforma en propuestas novedosas, las respalda con evidencias y está preparado para defender sus posiciones mediante contra-argumentaciones bien fundamentadas.</p>
+            </div>
+            
+            <h3 class="section-title">Destrezas que Desarrolla</h3>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span class="skill-icon">✂️</span>
+                    <span>Extraer Proposiciones</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🔄</span>
+                    <span>Eliminar Redundancias</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">📊</span>
+                    <span>Generalizar Categorías</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🎯</span>
+                    <span>Formular Conclusiones</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🛡️</span>
+                    <span>Argumentar Evidencias</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">⚔️</span>
+                    <span>Contra-Argumentar</span>
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">💡 Ejemplo Práctico: Producción Textual en Ensayos</div>
+                <p><strong>Contexto:</strong> Un estudiante lee 3 textos sobre cambio climático. Con CONCORDAR selecciona textos válidos. Con RELEVAR extrae ideas principales. Con INFERIR deduce relaciones causales. Con CONSTRUIR:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>✂️ <strong>Extrae proposiciones</strong> clave sobre causas antropogénicas</li>
+                    <li>🔄 <strong>Elimina repeticiones</strong> entre los 3 textos</li>
+                    <li>📊 <strong>Generaliza</strong> en categoría macro: "Impacto humano en ecosistemas"</li>
+                    <li>🎯 <strong>Formula conclusión general:</strong> "El cambio climático es resultado directo de acciones humanas no reguladas"</li>
+                    <li>🛡️ <strong>Argumenta</strong> con evidencias: datos de CO2, estudios científicos, reportes del IPCC</li>
+                    <li>⚔️ <strong>Contra-argumenta</strong> objeciones: "Aunque algunos dicen que es cíclico, la velocidad actual es 10x mayor que ciclos naturales"</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Producto:</strong> Un ensayo argumentativo donde el estudiante defiende su posición con solidez crítica.</p>
+            </div>
+            
+            <h3 class="section-title">Fases del Procedimiento</h3>
+            <div class="phases">
+                <div class="phase active">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">1</div>
+                            <h3>Extracción de Proposiciones Clave</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Identificar y compilar proposiciones principales extraídas del análisis previo</p>
+                        <ul class="actions-list">
+                            <li>Recopilar todas las proposiciones identificadas en fases anteriores</li>
+                            <li>Verificar que cada proposición es completa y bien definida</li>
+                            <li>Organizar proposiciones por tema o área conceptual</li>
+                            <li>Crear inventario estructurado de proposiciones válidas</li>
+                            <li>Asegurar que representan la totalidad de ideas relevantes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">2</div>
+                            <h3>Eliminación de Información Repetida</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Depurar redundancias sin perder información esencial</p>
+                        <ul class="actions-list">
+                            <li>Identificar proposiciones que expresan la misma idea con palabras diferentes</li>
+                            <li>Consolidar información repetida en una sola proposición clara</li>
+                            <li>Mantener la proposición más completa o mejor expresada</li>
+                            <li>Eliminar duplicados y redundancias que no añaden valor</li>
+                            <li>Verificar que ninguna información esencial se pierde en el proceso</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">3</div>
+                            <h3>Generalización a Categorías Superiores</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Agrupar proposiciones en categorías más generales para mayor comprensión</p>
+                        <ul class="actions-list">
+                            <li>Identificar proposiciones que comparten características comunes</li>
+                            <li>Agrupar en categorías temáticas más amplias</li>
+                            <li>Crear conceptos generalizadores que engloben múltiples proposiciones</li>
+                            <li>Establecer jerarquía conceptual: casos específicos → conceptos generales</li>
+                            <li>Validar que la generalización mantiene precisión sin perder rigor</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">4</div>
+                            <h3>Formulación de Conclusiones Generales y Específicas</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Sintetizar en conclusiones que reflejan comprensión integral del tema</p>
+                        <ul class="actions-list">
+                            <li>Formular conclusión general que integra todas las proposiciones depuradas</li>
+                            <li>Establecer conclusiones específicas para cada categoría temática</li>
+                            <li>Asegurar que conclusiones responden al propósito de lectura original</li>
+                            <li>Expresar conclusiones con claridad, precisión y sustancia</li>
+                            <li>Que reflejen compresión profunda y pensamiento crítico</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">5</div>
+                            <h3>Argumentación, Propuesta y Contra-Argumentación</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Defender posiciones con argumentos sólidos y anticipar objeciones</p>
+                        <ul class="actions-list">
+                            <li>Presentar argumentos claros respaldados por evidencias de los textos</li>
+                            <li>Fundamentar cada argumento con proposiciones y hechos validados</li>
+                            <li>Plantear propuestas innovadoras basadas en análisis crítico</li>
+                            <li>Anticipar argumentos contrarios a la posición planteada</li>
+                            <li>Desarrollar contra-argumentaciones con igual solidez y evidencia</li>
+                            <li>Demostrar capacidad de defensa argumentativa y pensamiento crítico</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-title">📌 PRODUCTO FINAL</div>
+                <div class="product-content">
+                    <strong>Construcción Crítica Integral:</strong> Propuestas claras y argumentadas, conclusiones generales y específicas fundamentadas, explicaciones completas que integran todas las partes y categorías del concepto, argumentación sólida respaldada por evidencias, y posiciones defensibles ante contra-argumentaciones. Expresión máxima del pensamiento crítico manifestada en producción textual estructurada (ensayos, análisis críticos, propuestas fundamentadas).
                 </div>
             </div>
         </div>
         
         <div class="footer">
-            <p><strong>Mentor Pedagógico CRIC</strong></p>
-            <p>Procedimientos basados en Pedagogía Conceptual - Fundación Lectores y Competencias</p>
-            <p style="margin-top: 15px; font-size: 0.9em;">© 2026 - Experto en Planeación Lúdico-Didáctica</p>
+            <p>🎓 Procedimientos CRIC - Pedagogía Conceptual</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Fundación Lectores y Competencias - Mentor Pedagógico CRIC</p>
         </div>
     </div>
     
     <script>
         function showTab(evt, tabName) {
             var i, tabcontent, tabbuttons;
-            
-            // Hide all tab contents
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].classList.remove("active");
             }
-            
-            // Remove active class from all buttons
             tabbuttons = document.getElementsByClassName("tab-button");
             for (i = 0; i < tabbuttons.length; i++) {
                 tabbuttons[i].classList.remove("active");
             }
-            
-            // Show the current tab and mark the button as active
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
         
         function togglePhase(element) {
-            element.parentElement.classList.toggle("active");
+            element.parentElement.parentElement.classList.toggle("active");
         }
-        
-        // Initialize first phase as open
-        document.addEventListener('DOMContentLoaded', function() {
-            var phases = document.querySelectorAll('.phase');
-            if (phases.length > 0) {
-                phases[0].classList.add('active');
-            }
-        });
     </script>
 </body>
 </html>
