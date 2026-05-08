@@ -233,6 +233,22 @@
             color: #856404;
         }
         
+        .example-box {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .example-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
         .footer {
             background: #f8f9fa;
             padding: 30px;
@@ -409,7 +425,7 @@
             <h2 class="procedure-title">⭐ PROCEDIMIENTO PARA RELEVAR</h2>
             
             <div class="definition">
-                Proceso mental de identificación y destaque de elementos principales que responden al propósito de lectura, mediante subrayado, esquematización y organización jerárquica de información.
+                Proceso mental de selección de elementos o rutas a seguir que, contrastado con parámetros clave, responden y resuelven una situación problema. Habilidad que ejecuta suspicacia y selectividad para perfeccionar la toma de decisiones. Facilita la organización de procesos e información para presentar de manera jerárquica y priorizada según necesidad.
             </div>
             
             <h3 class="section-title">Destrezas que Desarrolla</h3>
@@ -420,16 +436,25 @@
                 </div>
                 <div class="skill-item">
                     <span class="skill-icon">⭐</span>
-                    <span>Destacar Ideas Principales</span>
+                    <span>Priorizar Elementos</span>
                 </div>
                 <div class="skill-item">
                     <span class="skill-icon">🔨</span>
-                    <span>Reconocer Estructuras</span>
+                    <span>Tomar Decisiones</span>
                 </div>
                 <div class="skill-item">
                     <span class="skill-icon">✂️</span>
-                    <span>Sintetizar Información</span>
+                    <span>Organizar Información</span>
                 </div>
+                <div class="skill-item">
+                    <span class="skill-icon">⚙️</span>
+                    <span>Gestionar Procesos</span>
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">💡 Ejemplo Contextual: Organización del Tiempo</div>
+                <p>La habilidad RELEVAR interviene cuando una persona prioriza actividades según una necesidad. Por ejemplo: Si tiene 5 tareas y solo 2 horas, debe RELEVAR (seleccionar y priorizar) cuáles son las más importantes según parámetros clave como urgencia, impacto y recursos disponibles. Esto facilita la toma de decisiones efectiva y la organización óptima del tiempo.</p>
             </div>
             
             <h3 class="section-title">Fases del Procedimiento</h3>
@@ -438,18 +463,18 @@
                     <div class="phase-header" onclick="togglePhase(this)">
                         <div>
                             <div class="phase-number">1</div>
-                            <h3>Contraste de Preguntas y Párrafos</h3>
+                            <h3>Contraste con Parámetros Clave</h3>
                         </div>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Contrastar las Preguntas de Lectura con los párrafos</p>
+                        <p class="phase-description">Contrastar preguntas de lectura o criterios con los párrafos o elementos disponibles</p>
                         <ul class="actions-list">
-                            <li>Identificar los párrafos que tienen información relevante</li>
-                            <li>Leer el párrafo completo y detenidamente</li>
-                            <li>Identificar la sección del párrafo que responde la pregunta</li>
-                            <li>Subrayar la oración que responde la Pregunta de Lectura</li>
-                            <li>Marcar la oración con el número de Pregunta correspondiente</li>
+                            <li>Identificar los parámetros clave que responden al problema o necesidad</li>
+                            <li>Leer el párrafo o elemento completo y detenidamente</li>
+                            <li>Verificar si responde o soluciona la situación problema</li>
+                            <li>Identificar la información relevante que atiende los parámetros</li>
+                            <li>Marcar o subrayar los elementos clave correspondientes</li>
                         </ul>
                     </div>
                 </div>
@@ -458,17 +483,18 @@
                     <div class="phase-header" onclick="togglePhase(this)">
                         <div>
                             <div class="phase-number">2</div>
-                            <h3>Subrayado de Oraciones</h3>
+                            <h3>Selección Selectiva</h3>
                         </div>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Subrayar las oraciones que pueden responder la pregunta</p>
+                        <p class="phase-description">Seleccionar elementos según suspicacia y criterios de importancia</p>
                         <ul class="actions-list">
-                            <li>Marcar con exactitud la oración correcta</li>
-                            <li>Verificar que la oración contenga una idea completa</li>
-                            <li>Verificar que hay oraciones para cada pregunta de lectura</li>
-                            <li>Uso estratégico de herramientas de marcación (colores, símbolos)</li>
+                            <li>Evaluar cada elemento con suspicacia (análisis crítico y cuidadoso)</li>
+                            <li>Seleccionar solo información que responde directamente al parámetro</li>
+                            <li>Verificar que cada elemento contribuye a resolver la situación problema</li>
+                            <li>Descartar información irrelevante o redundante</li>
+                            <li>Asegurar que se tienen elementos para cada parámetro clave</li>
                         </ul>
                     </div>
                 </div>
@@ -477,17 +503,58 @@
                     <div class="phase-header" onclick="togglePhase(this)">
                         <div>
                             <div class="phase-number">3</div>
-                            <h3>Organización de Oraciones</h3>
+                            <h3>Jerarquización y Priorización</h3>
                         </div>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="phase-content">
-                        <p class="phase-description">Organizar las oraciones a partir de las Preguntas de Lectura</p>
+                        <p class="phase-description">Organizar los elementos de forma jerárquica según su importancia y urgencia</p>
                         <ul class="actions-list">
-                            <li>Verificar que tiene oraciones para cada pregunta de lectura</li>
-                            <li>Organizar las oraciones de la más a la menos completa</li>
-                            <li>Asegurar correspondencia entre pregunta y respuesta</li>
-                            <li>Jerarquización según importancia y completitud</li>
+                            <li>Ordenar elementos de mayor a menor relevancia respecto a la necesidad</li>
+                            <li>Establecer niveles de prioridad (crítico, importante, secundario)</li>
+                            <li>Crear una estructura jerárquica que facilite la comprensión</li>
+                            <li>Agrupar elementos relacionados por categorías</li>
+                            <li>Asignar recursos o tiempos según prioridad</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">4</div>
+                            <h3>Organización del Proceso</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Organizar la información y procesos en orden presentable y ejecutable</p>
+                        <ul class="actions-list">
+                            <li>Estructurar la información en secuencia lógica</li>
+                            <li>Crear un plan o ruta de acción basada en las prioridades</li>
+                            <li>Definir el orden de ejecución de procesos o actividades</li>
+                            <li>Preparar la información para presentar de forma clara y coherente</li>
+                            <li>Verificar que cada paso responde a la necesidad original</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header" onclick="togglePhase(this)">
+                        <div>
+                            <div class="phase-number">5</div>
+                            <h3>Verificación de Efectividad</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="phase-content">
+                        <p class="phase-description">Confirmar que la selección resuelve el problema y la organización es óptima</p>
+                        <ul class="actions-list">
+                            <li>Validar que todos los parámetros clave están cubiertos</li>
+                            <li>Verificar que el orden propuesto es el más eficiente</li>
+                            <li>Confirmar que nada relevante fue eliminado</li>
+                            <li>Asegurar que la presentación es clara y comprensible</li>
+                            <li>Evaluar si la solución resuelve efectivamente la situación problema</li>
                         </ul>
                     </div>
                 </div>
@@ -496,7 +563,7 @@
             <div class="product">
                 <div class="product-title">📌 PRODUCTO FINAL</div>
                 <div class="product-content">
-                    Oraciones relevadas y organizadas según las Preguntas de Lectura, que destacan los elementos principales del texto de forma clara y estructurada.
+                    Elementos Relevados, Priorizados y Organizados: Información seleccionada, jerárquicamente estructurada y debidamente organizada que resuelve la situación problema y facilita la toma de decisiones y organización del proceso o tiempo de manera óptima y efectiva.
                 </div>
             </div>
         </div>
